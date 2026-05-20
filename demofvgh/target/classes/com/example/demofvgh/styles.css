@@ -1,0 +1,97 @@
+/* ========================
+   Cute Dark Theme for Note App
+   ======================== */
+
+.root {
+    -fx-background-color: #2a2438;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+/* Top menu bar */
+.menu-bar {
+    -fx-background-color: #352f44;
+    -fx-padding: 4 8 4 8;
+    -fx-border-color: transparent transparent #4b4360 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Menu text */
+.menu .label {
+    -fx-text-fill: #f8eaff;
+}
+
+/* Menu when hovered/open */
+.menu:hover,
+.menu:showing {
+    -fx-background-color: #4b4360;
+    -fx-background-radius: 8;
+}
+
+/* Dropdown menu */
+.context-menu {
+    -fx-background-color: #352f44;
+    -fx-background-radius: 10;
+    -fx-padding: 4;
+}
+
+/* Menu items */
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+}
+
+.menu-item .label {
+    -fx-text-fill: #f8eaff;
+}
+
+.menu-item:focused {
+    -fx-background-color: #ffb6d9;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #2a2438;
+}
+
+/* Text area */
+.text-area {
+    -fx-background-color: #2f2840;
+    -fx-control-inner-background: #2f2840;
+    -fx-text-fill: #fff4fb;
+    -fx-highlight-fill: #ffb6d9;
+    -fx-highlight-text-fill: #2a2438;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 15px;
+    -fx-padding: 10;
+    -fx-border-color: #4b4360;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.text-area .content {
+    -fx-background-color: #2f2840;
+    -fx-background-radius: 12;
+}
+
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Scrollbars */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #3a3450;
+    -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #c79bd6;
+    -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #ffb6d9;
+}
