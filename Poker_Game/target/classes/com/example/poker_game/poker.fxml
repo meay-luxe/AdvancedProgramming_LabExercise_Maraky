@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="rootPane" prefHeight="700.0" prefWidth="1100.0" styleClass="root-pane" stylesheets="@poker.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poker_game.PokerController">
+
+    <!-- ==================== POKER TABLE ==================== -->
+    <StackPane layoutX="150.0" layoutY="80.0" prefHeight="420.0" prefWidth="800.0" styleClass="table-outer">
+
+        <StackPane prefHeight="370.0" prefWidth="750.0" styleClass="table-inner">
+
+            <VBox alignment="CENTER" spacing="15.0">
+
+                <Label styleClass="table-title" text="TEXAS HOLD'EM" />
+
+                <!-- Community cards -->
+                <HBox fx:id="communityCardsBox" alignment="CENTER" spacing="10.0">
+
+                    <StackPane fx:id="communityCard1" prefHeight="100.0" prefWidth="70.0" styleClass="card-slot">
+                        <Label fx:id="communityLabel1" styleClass="card-label" />
+                    </StackPane>
+
+                    <StackPane fx:id="communityCard2" prefHeight="100.0" prefWidth="70.0" styleClass="card-slot">
+                        <Label fx:id="communityLabel2" styleClass="card-label" />
+                    </StackPane>
+
+                    <StackPane fx:id="communityCard3" prefHeight="100.0" prefWidth="70.0" styleClass="card-slot">
+                        <Label fx:id="communityLabel3" styleClass="card-label" />
+                    </StackPane>
+
+                    <StackPane fx:id="communityCard4" prefHeight="100.0" prefWidth="70.0" styleClass="card-slot">
+                        <Label fx:id="communityLabel4" styleClass="card-label" />
+                    </StackPane>
+
+                    <StackPane fx:id="communityCard5" prefHeight="100.0" prefWidth="70.0" styleClass="card-slot">
+                        <Label fx:id="communityLabel5" styleClass="card-label" />
+                    </StackPane>
+
+                </HBox>
+
+                <Label fx:id="stageLabel" styleClass="stage-label" text="Click DEAL to start" />
+
+            </VBox>
+        </StackPane>
+    </StackPane>
+
+
+    <!-- ==================== COMPUTER (TOP) ==================== -->
+    <VBox alignment="CENTER" layoutX="430.0" layoutY="10.0" spacing="5.0">
+        <Label styleClass="computer-title" text="🤖 COMPUTER" />
+        <HBox fx:id="computerCardsBox" alignment="CENTER" prefHeight="95.0" prefWidth="197.0" spacing="8.0">
+
+               <StackPane fx:id="computerCard1" prefHeight="95.0" prefWidth="70.0" styleClass="card-back">
+                <Label fx:id="computerLabel1" styleClass="card-back-label" text="?" />
+            </StackPane>
+
+            <StackPane fx:id="computerCard2" prefHeight="95.0" prefWidth="68.0" styleClass="card-back">
+                <Label fx:id="computerLabel2" styleClass="card-back-label" text="?" />
+            </StackPane>
+
+        </HBox>
+        <Label fx:id="computerHandLabel" styleClass="hand-label-computer" />
+    </VBox>
+
+
+    <!-- ==================== PLAYER (BOTTOM) ==================== -->
+    <VBox alignment="CENTER" layoutX="430.0" layoutY="530.0" spacing="5.0">
+        <Label fx:id="playerHandLabel" styleClass="hand-label-player" />
+        <HBox fx:id="playerCardsBox" alignment="CENTER" spacing="8.0">
+
+            <StackPane fx:id="playerCard1" prefHeight="95.0" prefWidth="65.0" styleClass="player-card-slot">
+                <Label fx:id="playerLabel1" styleClass="card-label-large" />
+            </StackPane>
+
+            <StackPane fx:id="playerCard2" prefHeight="95.0" prefWidth="65.0" styleClass="player-card-slot">
+                <Label fx:id="playerLabel2" styleClass="card-label-large" />
+            </StackPane>
+
+        </HBox>
+        <Label styleClass="player-title" text="👤 YOU" />
+    </VBox>
+
+
+    <!-- ==================== CONTROL BUTTONS ==================== -->
+    <HBox alignment="CENTER" layoutX="250.0" layoutY="650.0" spacing="20.0">
+
+        <Button fx:id="dealButton" onAction="#onDeal" prefHeight="40.0" prefWidth="130.0" styleClass="btn,btn-deal" text="🃏 DEAL" />
+
+        <Button fx:id="flopButton" disable="true" onAction="#onFlop" prefHeight="40.0" prefWidth="110.0" styleClass="btn,btn-flop" text="FLOP" textFill="#100101" />
+
+        <Button fx:id="turnButton" disable="true" onAction="#onTurn" prefHeight="40.0" prefWidth="110.0" styleClass="btn,btn-turn" text="TURN" />
+
+        <Button fx:id="riverButton" disable="true" onAction="#onRiver" prefHeight="40.0" prefWidth="110.0" styleClass="btn,btn-river" text="RIVER" />
+
+        <Button fx:id="showdownButton" disable="true" onAction="#onShowdown" prefHeight="40.0" prefWidth="150.0" styleClass="btn,btn-showdown" text="🏆 SHOWDOWN" />
+
+    </HBox>
+
+
+    <!-- ==================== RESULT MESSAGE ==================== -->
+    <StackPane layoutX="300.0" layoutY="505.0" prefHeight="30.0" prefWidth="500.0">
+        <Label fx:id="resultLabel" styleClass="result-label" />
+    </StackPane>
+
+
+    <!-- ==================== TITLE & SCORE ==================== -->
+    <Label layoutX="20.0" layoutY="15.0" styleClass="game-title" text="♠♥ POKER ♦♣" />
+
+    <VBox layoutX="20.0" layoutY="55.0" spacing="3.0">
+        <Label fx:id="playerScoreLabel" styleClass="score-player" text="You: 0 wins" />
+        <Label fx:id="computerScoreLabel" styleClass="score-computer" text="Computer: 0 wins" />
+    </VBox>
+
+</AnchorPane>
